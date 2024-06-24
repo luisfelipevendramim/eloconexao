@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EloConexão</title>
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+  <!-- Estilos -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Scripts (jQuery não pode ser o slim que vem do Boostrap) -->
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/bf7e05c402.js" crossorigin="anonymous"></script>
+  <!-- Progress Bar -->
+  <script src="js/progressbar.min.js"></script>
+  <!-- Parallax -->
+  <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+  <style>
+    .navbar-hidden {
+      transform: translateY(-100%);
+      transition: transform 2s ease-in-out; /* Aumenta a duração da transição para 1s */
+    }
+    .navbar {
+      transition: transform 2.3s ease-in-out; /* Transição rápida para aparecer */
+    }
+  </style>
+</head>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var navbar = document.getElementById('navbar');
+      var previousScrollPosition = window.pageYOffset;
+
+      window.addEventListener('scroll', function() {
+        var currentScrollPosition = window.pageYOffset;
+
+        if (previousScrollPosition < currentScrollPosition) {
+          // Rolando para baixo
+          navbar.classList.add('navbar-hidden');
+        } else {
+          // Rolando para cima
+          navbar.classList.remove('navbar-hidden');
+        }
+
+        previousScrollPosition = currentScrollPosition;
+      });
+    });
+  </script>
+<body>
+  <header>
+    <div class="container" id="nav-container">
+      <!-- add essa class -->
+      <nav class="navbar navbar-expand-lg fixed-top navbar-dark" id="navbar">
+        <a class="navbar-brand" href="index.html">
+          <img id="logo" src="img/EloConexao-removebg-preview.png" alt="EloConexão">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbar-links">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link" id="home-menu" href="#">Home</span></a>
+            <a class="nav-item nav-link" id="maq-menu" href="#">Maquininhas</a>
+            <a class="nav-item nav-link" id="team-menu" href="#">Time</a>
+            <a class="nav-item nav-link" id="solucoes-menu" href="#/outrassolucoes">Outras Soluções</a>
+            <a class="nav-item nav-link" id="contact-menu" href="#">Contato</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="container-fluid" style="background-image: url('img/black-smooth-wall-textured-background.webp'); background-color: rgba(0, 0, 0, 0.5); z-index: -2;">
+      <!-- Sobre a empresa -->
+      <div id="home-area" style="background-image: url('img/black-smooth-wall-textured-background.webp');"></div>>
+        <div class="container" style="width: 60%;">
+          <div class="row align-items-start">
+            <video autoplay muted loop id="video-background" style="width: 100%; height: 625px; z-index: 0;">
+              <source src="https://video.wixstatic.com/video/537650_a840f047e87f4c4dbaa826a6fc192736/720p/mp4/file.mp4" type="video/mp4">
+              Seu navegador não suporta vídeos em HTML5.
+            </video>
+            <div class="col-md-6">
+              <img class="img-fluid" src="img/Celular_cartao.webp" alt="Celular Cartão" style="width: 397; height: 579;">
+            </div>
+            <div class="col-md-6">
+              <img src="img/EloConexao-removebg-preview2-removebg-preview.png" alt="Logo" style="width: 130px;">
+              <img src="img/C6-removebg-preview.png" alt="C6" style="width: 100px;">
+              <h3 class="home-title" style="font-size: 39px; color: #FCC00D;">A CONTA DA SUA EMPRESA:</h3>
+              <p style="font-size: 24px; color: #FFF;">Gratuita, segura e com atendimento humanizado.</p>
+              <p style="font-size: 12px; color: #FFF;">Transferências gratuitas, 100 boletos gratuitos, cartão de crédito sem anuidade e crédito para investir no seu negócio.</p>
+              <a href="https://wa.me/551934111820" class="main-btn">
+                <i class="fab fa-whatsapp"></i> Entre em contato</a>
+            </div>
+            <div class="col-md-6" style="background-color: rgba(0, 0, 0, 0.5);">
+              <img class="img-fluid" src="img/c6-bank-empresas.jpg" alt="C6 Empresas">
+            </div>
+            <div class="col-md-6">
+              <h3 class="home-title" style="font-size: 39px; color: #FCC00D;">POR QUE ABRIR UMA CONTA C6 EMPRESAS?</h3>
+            </div>
+            <div class="col-10">
+              <ul id="home-list" style="list-style: none; padding-left: 0;"> <!-- Removendo os estilos padrão da lista -->
+                <li><img src="img/Checkbox-removebg-preview.png" alt="Checkbox" style="vertical-align: middle; width: 20px; height: auto;"><p style="vertical-align: middle; display: inline;"></p> Conta corrente completa e sem tarifa de manutenção mensal</li>
+                <li><img src="img/Checkbox-removebg-preview.png" alt="Checkbox" style="vertical-align: middle; width: 20px; height: auto;"><p style="vertical-align: middle; display: inline;"></p> PIX gratuitos e ilimitados</li>
+                <li><img src="img/Checkbox-removebg-preview.png" alt="Checkbox" style="vertical-align: middle; width: 20px; height: auto;"> Cartão de crédito sem anuidade e até 10 adicionais sem custo (sujeito análise)</li>
+                <li><img src="img/Checkbox-removebg-preview.png" alt="Checkbox" style="vertical-align: middle; width: 20px; height: auto;"> Boletos de cobrança (são 100 boletos compensados por mês gratuítos). Quando pagos até às 13:29 horas, serão compensados no mesmo dia</li>
+                <li><img src="img/Checkbox-removebg-preview.png" alt="Checkbox" style="vertical-align: middle; width: 20px; height: auto;"> Conta Global em Dólar e Euro. Operações de Câmbio</li>
+                <li><img src="img/Checkbox-removebg-preview.png" alt="Checkbox" style="vertical-align: middle; width: 20px; height: auto;"> Maquininha de cartões sem taxa de adesão e sem mensalidade (consulte condições)</li>
+                <li><img src="img/Checkbox-removebg-preview.png" alt="Checkbox" style="vertical-align: middle; width: 20px; height: auto;"> Crédito – Cartão de crédito, cheque especial e capital de giro para investir no seu negócio (sujeitos a análise)</li>
+                <li><img src="img/Checkbox-removebg-preview.png" alt="Checkbox" style="vertical-align: middle; width: 20px; height: auto;"> 100 TEDs grátis mês</li>
+                <li><img src="img/Checkbox-removebg-preview.png" alt="Checkbox" style="vertical-align: middle; width: 20px; height: auto;"> C6 TAG Tag de pedágios e estacionamentos sem pegadinha</li>
+                <li><img src="img/Checkbox-removebg-preview.png" alt="Checkbox" style="vertical-align: middle; width: 20px; height: auto;"> Investimentos em CDB a partir de 104% do CDI</li>
+                <li><img src="img/Checkbox-removebg-preview.png" alt="Checkbox" style="vertical-align: middle; width: 20px; height: auto;"> CDB Cartão. O valor aplicado é liberado instantaneamente em limite de cartão de crédito</li>
+                <li><img src="img/Checkbox-removebg-preview.png" alt="Checkbox" style="vertical-align: middle; width: 20px; height: auto;"> Extrato com visualização de comprovantes</li>
+                <li><img src="img/Checkbox-removebg-preview.png" alt="Checkbox" style="vertical-align: middle; width: 20px; height: auto;"> Pagamento de contas ilimitado</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Maquininhas -->
+      <div id="maq-area" class="carousel slide" data-ride="carousel" style="width: 100%; max-height: 400px; overflow: hidden;">
+        <ol class="carousel-indicators">
+          <li data-target="#maq-area" data-slide-to="0" class="active"></li>
+          <li data-target="#maq-area" data-slide-to="1"></li>
+          <li data-target="#maq-area" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="img/communication-4871245.jpg" class="d-block w-100" alt="Projetos de e-commerce">
+      
+                <!-- tirar classe d-none -->
+      
+                <div class="carousel-caption d-md-block" style="color: #FFD600; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%;">
+                  <h2 style="z-index: 1; font-weight: bold; position: relative; text-align: left; font-size: 48px; width: 50%; top: 30%; padding-top: -180px;">ESCOLHA A MAQUININHA IDEAL PARA O SEU NEGÓCIO</h2>
+                  <img src="img/maquina_ideal2-removebg-preview.png" class="img-overlay" style="position: absolute; top: 50%; right: 0; transform: translateY(-50%); max-width: 50%; height: auto;" alt="Maquina Ideal">
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="img/communication-4871245.jpg" class="d-block w-100" alt="Engenharia de software">
+                <div class="carousel-caption d-md-block" style="color: #FFD600; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%;">
+                  <div style="background-color: #FFD600; display: inline-block; padding: 5px; line-height: 1; margin: 0;">
+                    <h2 style="color: black; margin: 0;"><b>C6 PAY SUPERMINI</b></h2>
+                  </div>
+                  <div class="col-10" style="text-align: left; margin-top: 20px;">
+                    <h2 style="z-index: 1; font-weight: bold; position: relative; text-align: left; width: 60%; top: 30%; padding-top: -180px; font-size: 20px; margin-bottom: 8px; margin-top: 30px;"><b>Mobilidade e praticidade para as suas vendas</b></h5>
+                    <ul id="home-list" style="list-style: none; padding-left: 0;"> <!-- Removendo os estilos padrão da lista -->
+                      <li><img src="img/Checkbox-removebg-preview.png" alt="Checkbox" style="vertical-align: middle; width: 20px; height: auto;"><p style="vertical-align: middle; display: inline;"></p> Pagamento por aproximação</li>
+                      <li><img src="img/Checkbox-removebg-preview.png" alt="Checkbox" style="vertical-align: middle; width: 20px; height: auto;"><p style="vertical-align: middle; display: inline;"></p> Comprovante por SMS</li>
+                      <li><img src="img/Checkbox-removebg-preview.png" alt="Checkbox" style="vertical-align: middle; width: 20px; height: auto;"> Não precisa de celular</li>
+                      <li><img src="img/Checkbox-removebg-preview.png" alt="Checkbox" style="vertical-align: middle; width: 20px; height: auto;"> Chip Gratuito</li>
+                    </ul>
+                    <h2 style="z-index: 1; font-weight: bold; position: relative; text-align: left; width: 50%; top: 30%; padding-top: -180px; font-size: 20px; margin-bottom: 6px;"><b>ADESÃO ZERO R$0</b></h5>
+                    <p style="font-size: 12px; margin-bottom: 4px;">Você terá reembolso mensal da parcela da adesão ao faturar acima de R$ 3.500 ao mês, recebendo pelo C6 Bank.</p>
+                    <p style="font-size: 12px; margin-top: 4px;">VALOR SEM ADESÃO ZERO: 12X R$ 26,90</p>
+                  </div> 
+                  <a href="https://wa.me/551934111820" class="main-btn">
+                    <i class="fab fa-whatsapp"></i> PEÇA JÁ</a>
+                  <img src="img/supermini.webp" class="img-overlay" style="position: absolute; top: 50%; right: 0; transform: translateY(-50%); max-width: 50%; height: auto;" alt="Maquina Ideal">
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="img/communication-4871245.jpg" class="d-block w-100" alt="Engenharia de software">
+                <div class="carousel-caption d-md-block" style="color: #FFD600; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%;">
+                  <div style="background-color: #FFD600; display: inline-block; padding: 5px; line-height: 1; margin: 0;">
+                    <h2 style="color: black; margin: 0;"><b>C6 PAY ESSENCIAL</b></h2>
+                  </div>
+                  <div class="col-10" style="text-align: left; margin-top: 20px;">
+                    <h2 style="z-index: 1; font-weight: bold; position: relative; text-align: left; width: 60%; top: 30%; padding-top: -180px; font-size: 20px; margin-bottom: 8px; margin-top: 30px;"><b>Todas as maquininhas em uma única C6 Pay</b></h5>
+                    <ul id="home-list" style="list-style: none; padding-left: 0;"> <!-- Removendo os estilos padrão da lista -->
+                      <li><img src="img/Checkbox-removebg-preview.png" alt="Checkbox" style="vertical-align: middle; width: 20px; height: auto;"><p style="vertical-align: middle; display: inline;"></p> Pagamento por aproximação</li>
+                      <li><img src="img/Checkbox-removebg-preview.png" alt="Checkbox" style="vertical-align: middle; width: 20px; height: auto;"><p style="vertical-align: middle; display: inline;"></p> Imprime comprovantes</li>
+                      <li><img src="img/Checkbox-removebg-preview.png" alt="Checkbox" style="vertical-align: middle; width: 20px; height: auto;"> Chip Gratuito</li>
+                      <li><img src="img/Checkbox-removebg-preview.png" alt="Checkbox" style="vertical-align: middle; width: 20px; height: auto;"> Gere Boletos</li>
+                      <li><img src="img/Checkbox-removebg-preview.png" alt="Checkbox" style="vertical-align: middle; width: 20px; height: auto;"> Tela sensível a toque</li>
+                    </ul>
+                    <h2 style="z-index: 1; font-weight: bold; position: relative; text-align: left; width: 50%; top: 30%; padding-top: -180px; font-size: 20px; margin-bottom: 6px;"><b>ADESÃO ZERO R$0</b></h5>
+                    <p style="font-size: 12px; margin-bottom: 4px;">Você terá reembolso mensal da parcela da adesão ao faturar acima de R$ 5.000 ao mês, recebendo pelo C6 Bank.</p>
+                    <p style="font-size: 12px; margin-top: 4px;">VALOR SEM ADESÃO ZERO: 12X R$ 39,90</p>
+                  </div> 
+                  <a href="https://wa.me/551934111820" class="main-btn">
+                    <i class="fab fa-whatsapp"></i> PEÇA JÁ</a>
+                  <img src="img/supermini.webp" class="img-overlay" style="position: absolute; top: 50%; right: 0; transform: translateY(-50%); max-width: 50%; height: auto;" alt="Maquina Ideal">
+                </div>
+              </div>
+            </div>
+            <a class="carousel-control-next" href="#maq-area" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+      </div>
+      <!-- Nosso Time -->
+      <div id="team-area" style="background-image: url('img/pattern.png');">
+        <div class="container" style="width: 60%;">
+            <div class="row align-items-start">
+              <div class="col-md-6">
+                <img class="img-fluid" src="img/victor.webp" alt="Victor" style="width: 83.5%; height: 100%;">
+              </div>
+              <div class="col-md-6">
+                <h3 class="home-title" style="font-size: 50px; color: #FCC00D;">NOSSO TIME</h3>
+                <p style="font-size: 24px; color: #FFF;">Somos pessoas dedicadas a entender as demandas de nossos clientes.
+                  Buscamos as melhores e mais
+                  justas soluções bancárias através
+                  de nossos parceiros</p>
+                <a href="https://wa.me/551934111820" class="main-btn">
+                  <i class="fab fa-whatsapp"></i> Entre em contato</a>
+              </div>
+            </div>
+          </div>
+      </div>
+      <!-- Contato -->
+      <div id="contact-area" style="background-image: url('img/black-smooth-wall-textured-background.webp');">
+        <div class="container-fluid" style="background-color: rgba(0, 0, 0, 0.5);">
+          <div class="row" style="width: 60%; margin: 0 auto;">
+            <div class="col-md-12">
+              <p style="font-size: 23px; text-align: center; color: #FCC00D; margin-top: 30px;">PARCEIRO C6 BANK</p>
+              <p style="font-size: 14px; text-align: center; margin-top: auto;">O presente site foi criado por um parceiro e distribuidor de produtos do C6 Bank e as informações aqui são de total responsabilidade de seus criadores. Nenhuma informação é oficial do C6 Bank. Para mais informações acesse o site do C6 Bank (<a href="http://www.c6bank.com.br">www.c6bank.com.br</a>) ou contate os nossos canais oficiais</p>
+            </div>
+            <div class="col-md-4 project-box dev">
+              <p style="margin-bottom: 0">CENTRAL DE RELACIONAMENTO 24H CHAT PARA CLIENTES C6 BANK
+                </p>
+              <p>(<a href="http://www.c6bank.com.br">No App C6 Bank</a>)</p>
+              <p style="margin-bottom: 0"><b>OUVIDORIA</b></p>
+              <p>9h às 18h - Segunda a sexta,
+                exceto feriados
+                0800 660 6060</p>    
+            </div>
+            <div class="col-md-4 project-box dsg">
+              <p style="margin-bottom: 0"><b>CAPITAIS E REGIÕES
+                METROPOLITANAS</b></p>
+                <p>3003 6116</p>
+            <p style="margin-bottom: 0"><b>DEMAIS LOCALIDADES</b></p> 
+              <p>0800 660 6116</p>
+              <p style="margin-bottom: 0"><b>E-MAIL</b></p>
+              <p>(<a href="mailto:faleconosco@c6bank.com.br">faleconosco@c6bank.com.br</a>)</p>    
+            </div>
+            <div class="col-md-4 project-box seo">
+              <p style="margin-bottom: 0"><b>WHATSAPP</b></p>
+            <p>(11) 2832 6088</p>
+            <p style="margin-bottom: 0"><b>SAC 24H</b></p>
+            <p>0800 660 0060</p>    
+            </div>
+            <div class="col-md-6">
+              <p style="margin-bottom: 10px; font-size: 23px; text-align: center;">Não encontra o que procura?</p>
+              <h3 class="main-title" style="font-size: 72px; color: #FCC00D; margin-top: 10px;"><b>Entre em contato</b></h3>
+            </div>
+            <div class="col-md-6">
+              <p style="margin-bottom: 10px; font-size: 17px; text-align: start;">Se você tiver alguma dúvida, entre em contato conosco através das seguintes informações de contato:</p>
+              <ul id="home-list">
+                <li><i class="fas fa-check" style="line-height: 25px; color: #FFD600;"></i> Telefone: (19) 3411-1820</li>
+                <li><i class="fas fa-check" style="line-height: 25px; color: #FFD600;"></i> WhatsApp: (19) 3411-1820</li>
+                <li><i class="fas fa-check" style="line-height: 25px; color: #FFD600;"></i> Email: contato@eloconexao.com</li>
+                <li><i class="fas fa-check" style="line-height: 25px; color: #FFD600;"></i> Endereço: Avenida Independência, nº1840, sala 1009</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Newsletter -->
+      <div id="news-area">
+        <iframe
+        id="news" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8752.446659113344!2d-47.639849812029425!3d-22.73008077712852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c631a62699a7c1%3A0xa77fc46b50f535c8!2sAv.%20Independ%C3%AAncia%20-%20Piracicaba%2C%20SP!5e0!3m2!1spt-BR!2sbr!4v1718248425524!5m2!1spt-BR!2sbr" frameborder="0"       style="border:0;"
+        allowfullscreen=""
+        aria-hidden="false"
+        tabindex="0">></iframe>
+        <div id="custom-button"><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Av.%20Independ%C3%AAncia%20-%20Piracicaba,%20SP,%20Brasil" target="_blank">Eloconexão</a></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <div id="copy-area">
+      <div class="container">
+        <div class="row">
+            <div class="col-md-12" style="text-align: center;">
+              <a href="https://wa.me/551934111820" class="main-btn" style="margin-right: 10px;">
+                <i class="fab fa-whatsapp" style="font-size: 38px; color: black; vertical-align: -10%;"></i></a>
+              <a href="https://www.instagram.com/oelocerto/" class="main-btn" style="margin-left: 10px;">
+                <i class="fab fa-instagram" style="font-size: 38px; margin-left: 10px; color: black; vertical-align: -10%;"></i></a>  
+                <p style="color: black; margin-top: 10px;"><b>Desenvolvido por Luís Felipe Vendramim para Eloconexão em 2024 &copy;</b></p>
+                <p style="color: black; font-size: 14px;">Eloconexão Soluções Financeiras Ltda CNPJ 35.458.802/0001-24</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts do projeto -->
+  <script src="js/scripts.js"></script>
+</body>
+</html>
