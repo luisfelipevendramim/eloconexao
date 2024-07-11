@@ -127,10 +127,3 @@ $('#maq-area').on('click', '.carousel-control-next', function() {
   console.log('Botão Next clicado');
 });
 
-<script>
-// Evento de clique para redirecionar sem hash
-document.querySelector('a[href="outrassolucoes.html"]').addEventListener('click', function(event) {
-    event.preventDefault()}; // Evita o comportamento padrão do link
-    window.location.href = 'outrassolucoes.html'; // Redireciona para outrassolucoes.html
-);
-</script>
