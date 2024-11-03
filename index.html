@@ -8,6 +8,23 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
   <!-- Estilos -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <style>
+    #cookie-consent {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        z-index: 1000;
+        display: none;
+    }
+    #cookie-consent button {
+        margin-left: 10px;
+    }
+  </style>
   <link rel="stylesheet" href="css/styles.css">
   <!-- Scripts (jQuery não pode ser o slim que vem do Boostrap) -->
   <script
@@ -69,6 +86,8 @@
             <a class="nav-item nav-link" id="maq-menu" href="#">Maquininhas</a>
             <a class="nav-item nav-link" id="team-menu" href="#">Time</a>
             <a class="nav-item nav-link" id="solucoes-menu" href="outrassolucoes.html">Outras Soluções</a>
+            <a class="nav-item nav-link" id="terms-menu" href="termos.html">Termos de Uso</a> <!-- Link para os Termos de Uso -->
+            <a class="nav-item nav-link" id="privacy-menu" href="privacidade.html">Políticas de Privacidade</a> <!-- Link para Políticas de Privacidade -->
             <a class="nav-item nav-link" id="contact-menu" href="#">Contato</a>
           </div>
         </div>
@@ -291,7 +310,31 @@
     </div>
   </footer>
 
+  <div id="cookie-consent">
+    Este site usa cookies para melhorar sua experiência. 
+    <button id="accept-cookies" class="btn btn-primary">Aceitar</button>
+    <button id="reject-cookies" class="btn btn-secondary">Recusar</button>
+  </div>
+
   <!-- Scripts do projeto -->
   <script src="js/scripts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var consent = localStorage.getItem('cookieConsent');
+        if (!consent) {
+            document.getElementById('cookie-consent').style.display = 'block';
+        }
+
+        document.getElementById('accept-cookies').onclick = function() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookie-consent').style.display = 'none';
+        };
+
+        document.getElementById('reject-cookies').onclick = function() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            document.getElementById('cookie-consent').style.display = 'none';
+        };
+    });
+  </script>
 </body>
 </html>
