@@ -87,7 +87,8 @@ $( document ).ready(function() {
 
   let bannerSection = $('#home-area');
   let homeSection = $('#home-area');
-  let maqSection = $('#maq-area');
+  let maqSection = $('#seg-area');
+  let certSection = $('#cert-area');
   let teamSection = $('#team-area');
   let solucoesSection = $('#solucoes-area');
   let contactSection = $('#contact-area');
@@ -102,6 +103,8 @@ $( document ).ready(function() {
       scrollTo = homeSection;
     } else if(btnId == 'maq-menu') {
       scrollTo = maqSection;
+    } else if(btnId == 'cert-menu') {
+      scrollTo = certSection;
     } else if(btnId == 'team-menu') {
       scrollTo = teamSection;
     } else if(btnId == 'solucoes-menu') {
@@ -119,11 +122,11 @@ $( document ).ready(function() {
 
 });
 
-$('#maq-area').on('click', '.carousel-control-prev', function() {
+$('#seg-area').on('click', '.carousel-control-prev', function() {
   console.log('Botão Prev clicado');
 });
 
-$('#maq-area').on('click', '.carousel-control-next', function() {
+$('#seg-area').on('click', '.carousel-control-next', function() {
   console.log('Botão Next clicado');
 });
 
